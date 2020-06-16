@@ -1,0 +1,23 @@
+<div class="main_wrapper">
+    <div class="main_inner">
+        <div class="main_element">
+            <div class="input_actions">
+                <input class="input_el" id = "taskInput" #taskTitleInput type="text">
+                <button class="btn_el" (click) = 'createTask(taskTitleInput.value)'>
+                    Save
+                </button>
+            </div>
+            <div class="task_list">
+                <div class="task_el" *ngFor = 'let task of tasks'>
+                    <div class="click_part">
+                        <p class="title">{{ task.title }}</p>
+                    </div>
+                    <div class="task_btns">
+                        <button class="btn_task btn_red" (click) = 'delite(task._id)'>Delete</button>
+                        <button class="btn_task btn_blue" (click) = 'edit(task._id, task.title)'>Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
